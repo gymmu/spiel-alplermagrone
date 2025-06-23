@@ -29,20 +29,64 @@
          "y":0
         }, 
         {
+         "draworder":"topdown",
+         "id":4,
+         "name":"Items",
+         "objects":[],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":3,
+         "name":"SpawnPoints",
+         "objects":[
+                {
+                 "height":14.3333,
+                 "id":139,
+                 "name":"SpawnPlayer",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":14,
+                 "x":264.333,
+                 "y":303.333
+                }, 
+                {
+                 "height":0,
+                 "id":140,
+                 "name":"NPC",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":375.5,
+                 "y":234
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 8, 8, 8, 0, 8, 8, 8, 6, 0, 0,
-            0, 0, 0, 2, 2, 5, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0,
-            0, 0, 0, 2, 2, 0, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0,
-            0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0,
-            0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 5, 6, 0,
-            0, 0, 0, 2, 2, 5, 5, 5, 5, 5, 2, 2, 6, 6, 6, 6, 6, 6, 5, 0,
-            0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 0, 8, 8, 8, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 8, 0, 0, 2, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 8, 2, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 8, 2, 0, 0, 0, 0, 0, 2, 8, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":15,
          "id":2,
@@ -56,240 +100,25 @@
         }, 
         {
          "draworder":"topdown",
-         "id":3,
-         "name":"SpawnPoints",
-         "objects":[
-                {
-                 "height":0,
-                 "id":8,
-                 "name":"SpawnPlayer",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":192,
-                 "y":288
-                }, 
-                {
-                 "height":0,
-                 "id":9,
-                 "name":"NPC",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":416,
-                 "y":224
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":4,
-         "name":"Items",
-         "objects":[
-                {
-                 "gid":3,
-                 "height":32,
-                 "id":1,
-                 "name":"Mushroom",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":10
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":20
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":160,
-                 "y":256
-                }, 
-                {
-                 "gid":3,
-                 "height":32,
-                 "id":2,
-                 "name":"Mushroom",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":10
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":20
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":320,
-                 "y":256
-                }, 
-                {
-                 "gid":3,
-                 "height":32,
-                 "id":3,
-                 "name":"Mushroom",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":10
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":20
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":544,
-                 "y":288
-                }, 
-                {
-                 "gid":4,
-                 "height":32,
-                 "id":4,
-                 "name":"Flower",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":20
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":50
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":512,
-                 "y":320
-                }, 
-                {
-                 "gid":4,
-                 "height":32,
-                 "id":5,
-                 "name":"Flower",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":20
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":50
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":512,
-                 "y":224
-                }, 
-                {
-                 "gid":4,
-                 "height":32,
-                 "id":6,
-                 "name":"Flower",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":20
-                        }, 
-                        {
-                         "name":"keyName",
-                         "type":"string",
-                         "value":"level-02"
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":50
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":288,
-                 "y":320
-                }, 
-                {
-                 "gid":2,
-                 "height":32,
-                 "id":12,
-                 "name":"Stone",
-                 "properties":[
-                        {
-                         "name":"collides",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":256,
-                 "y":288
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
          "id":5,
          "name":"Doors",
          "objects":[
                 {
                  "gid":7,
                  "height":32,
-                 "id":7,
-                 "name":"Cave",
+                 "id":107,
+                 "name":"Ende",
                  "properties":[
                         {
-                         "name":"goToWorld",
+                         "name":"Need_Key",
                          "type":"string",
-                         "value":"map-level-02"
-                        }, 
-                        {
-                         "name":"needKey",
-                         "type":"string",
-                         "value":"level-02"
+                         "value":""
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":416,
+                 "x":320,
                  "y":192
                 }],
          "opacity":1,
@@ -298,8 +127,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":6,
- "nextobjectid":13,
+ "nextlayerid":7,
+ "nextobjectid":154,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
