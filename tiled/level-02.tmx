@@ -21,7 +21,7 @@
  <layer id="2" name="Obstacles" width="14" height="10">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,14,16,16,16,15,16,17,0,
+0,0,0,0,0,0,14,16,16,16,0,16,17,0,
 0,0,0,0,0,0,20,5,8,0,0,0,23,0,
 0,0,0,0,0,0,20,13,8,0,0,0,23,0,
 0,14,16,16,16,16,0,13,8,0,0,2,23,0,
@@ -33,13 +33,14 @@
 </data>
  </layer>
  <objectgroup id="3" name="SpawnPoints">
-  <object id="12" name="SpawnPlayer" x="112.667" y="254"/>
+  <object id="12" name="SpawnPlayer" x="112.167" y="246.5"/>
   <object id="15" name="NPC" x="261.5" y="223"/>
  </objectgroup>
  <objectgroup id="4" name="Items"/>
  <objectgroup id="5" name="Doors">
-  <object id="16" name="Ende" gid="15" x="320" y="64" width="32" height="32">
+  <object id="16" name="Cave" gid="15" x="320" y="64" width="32" height="32">
    <properties>
+    <property name="collides" type="bool" value="false"/>
     <property name="goToWorld" value="map-level-03"/>
    </properties>
   </object>
