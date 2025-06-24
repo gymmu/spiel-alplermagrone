@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="11" height="8" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="155">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="11" height="8" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="160">
  <editorsettings>
   <export target="../public/assets/maps/map-level-01.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" source="tileset.tsx"/>
+ <tileset firstgid="226" source="tileset..tsx"/>
  <layer id="1" name="Background" width="11" height="8">
   <data encoding="csv">
-10,7,7,7,7,7,7,7,7,7,10,
-8,19,19,19,19,19,25,19,19,19,13,
-8,19,21,24,24,24,24,24,22,19,13,
-8,19,18,25,19,25,25,25,30,19,13,
-8,19,18,25,25,25,19,25,30,19,13,
-8,19,27,36,36,36,36,36,28,19,13,
-8,19,19,19,19,19,19,19,19,19,13,
-10,9,9,9,9,9,9,9,9,9,10
+19,16,16,16,16,16,16,16,16,16,19,
+17,46,46,46,46,46,61,46,46,46,31,
+17,46,48,51,51,51,51,51,49,46,31,
+17,46,36,61,46,61,61,61,66,46,31,
+17,46,36,61,61,61,46,61,66,46,31,
+17,46,63,81,81,81,81,81,289,46,31,
+17,46,46,46,46,46,46,46,46,46,31,
+19,18,18,18,18,18,18,18,18,18,19
 </data>
  </layer>
  <objectgroup id="4" name="Items"/>
@@ -24,17 +25,17 @@
  <layer id="2" name="Obstacles" width="11" height="8">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,
-0,14,16,16,16,16,0,16,16,17,0,
-0,20,0,0,0,0,0,0,0,23,0,
-0,20,0,0,0,0,0,0,0,23,0,
-0,20,0,0,0,0,0,0,0,23,0,
-0,20,2,0,0,0,0,0,2,23,0,
-0,32,33,33,33,34,33,33,33,35,0,
+0,32,34,34,34,34,0,34,34,35,0,
+0,47,0,0,0,0,0,0,0,50,0,
+0,47,0,0,0,0,0,0,0,50,0,
+0,47,0,0,0,0,0,0,0,50,0,
+0,47,2,0,0,0,0,0,227,50,0,
+0,77,78,78,78,79,78,78,78,80,0,
 0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
  <objectgroup id="5" name="Doors">
-  <object id="154" name="Cave" gid="15" x="192" y="64" width="32" height="32">
+  <object id="154" name="Cave" gid="33" x="192" y="64" width="32" height="32">
    <properties>
     <property name="collides" type="bool" value="false"/>
     <property name="goToWorld" value="map-level-02"/>
