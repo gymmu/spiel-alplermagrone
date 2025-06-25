@@ -3,12 +3,12 @@ import { getRandomDirection } from "./utils.js"
 import Player from "./player.js"
 
 export default class NPC extends Phaser.Physics.Arcade.Sprite {
-  hp = 10
-  maxHp = 100
-  #speed = 100
+  hp = 3
+  maxHp = 3
+  #speed = 50
   stepsLeft = 60
   move = "left"
-  attackPower = 5
+  attackPower = 1
   isInvulnerable = false
 
   constructor(scene, x, y) {
@@ -91,7 +91,7 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
     if (value == null) value = 0
     this.hp = this.hp + value
     if (this.hp > this.maxHp) {
-      this.hp = this.mapHp
+      this.hp = this.maxHp
     }
   }
 
@@ -99,20 +99,22 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
     if (this.isInvulnerable) return
 
     this.isInvulnerable = true
-    this.scene.time.delayedCall(1000, () => {
-      this.isInvulnerable = false
-    })
+    this.scene.time.delayedCall(500, () => {
+      this.isInvulnerable = false})
 
     if (value == null) value = 0
     this.hp = this.hp - value
     if (this.hp <= 0) {
       this.destroy()
+      }
     }
-  }
+
 
   onCollide(actor) {
     if (actor instanceof Player) {
       actor.damage(this.attackPower)
     }
   }
+
+
 }
