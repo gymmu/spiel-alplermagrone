@@ -88,7 +88,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   baseSpeed = 100
   gotHit = false
   isAttacking = false
-  attackSpeed = 100
+  attackSpeed = 700
   inventory = new Array(6).fill(null) // Inventar mit 6 Slots initialisieren
   lastDirection = { x: 0, y: 1 } // Default: down
 

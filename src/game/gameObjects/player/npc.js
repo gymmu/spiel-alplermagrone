@@ -99,14 +99,16 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
     if (this.isInvulnerable) return
 
     this.isInvulnerable = true
-    this.scene.time.delayedCall(1000, () => {
-      this.isInvulnerable = false
-    })
+    this.scene.time.delayedCall(500, () => {
+      this.isInvulnerable = false})
 
     if (value == null) value = 0
     this.hp = this.hp - value
     if (this.hp <= 0) {
       this.destroy()
+      if (this.props.keyName) {
+        player.addKey(this.props.keyName)
+      }
     }
   }
 
@@ -115,4 +117,6 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
       actor.damage(this.attackPower)
     }
   }
+
+
 }
