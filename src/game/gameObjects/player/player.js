@@ -269,10 +269,8 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       })
 
       // Wir berechnen die Richtung in die der Spieler blickt
-      const dir = new Phaser.Math.Vector2(
-        this.lastDirection.x,
-        this.lastDirection.y,
-      )
+      const pointer = this.scene.input.activePointer
+const dir = new Phaser.Math.Vector2(pointer.worldX - this.x, pointer.worldY - this.y).normalize()
 
       // Wenn die Richtung nicht 0 ist, dann erstellen wir ein Projectile
       if (dir.lengthSq() > 0) {
