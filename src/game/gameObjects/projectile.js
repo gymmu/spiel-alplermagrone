@@ -1,5 +1,7 @@
 import Phaser from "phaser"
-import NPC from "./player/npc"
+import Player from "./player/player"
+
+
 
 export default class Projectile extends Phaser.Physics.Arcade.Sprite {
   /**
@@ -11,7 +13,7 @@ export default class Projectile extends Phaser.Physics.Arcade.Sprite {
    * @param {number} speed
    * @param {number} attackPower
    */
-  constructor(scene, x, y, direction, speed = 300, attackPower = 1) {
+  constructor(scene, x, y, direction, speed = 100, attackPower = 1) {
     super(scene, x, y, "pickups", "stone")
     this.scene = scene
     this.attackPower = attackPower
@@ -23,6 +25,7 @@ export default class Projectile extends Phaser.Physics.Arcade.Sprite {
     this.setScale(0.5)
     this.body.setAllowGravity(false)
     this.body.setVelocity(direction.x * speed, direction.y * speed)
+    this.rotation = Phaser.Math.Angle.Between(0, 0, direction.x, direction.y)
 
     // Play stone sound effect when shot
     if (scene.sound) {
