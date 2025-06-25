@@ -106,11 +106,9 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
     this.hp = this.hp - value
     if (this.hp <= 0) {
       this.destroy()
-      if (this.props.keyName) {
-        player.addKey(this.props.keyName)
       }
     }
-  }
+
 
   onCollide(actor) {
     if (actor instanceof Player) {
