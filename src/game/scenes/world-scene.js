@@ -38,12 +38,12 @@ export default class Base2DScene extends Phaser.Scene {
   }
 
   create() {
-    // --- Musik starten ---
-    this.music = this.sound.add('bgMusic', { loop: true, volume: 0.1 });
-    this.input.once('pointerdown', () => {
+    if (!this.sound.get('bgMusic')) {
+      this.music = this.sound.add('bgMusic', { loop: true, volume: 0.1 });
       this.music.play();
-    });
-    this.add.text(10, 10, 'Klicke zum Starten der Musik');
+    } else {
+      this.music = this.sound.get('bgMusic');
+    }
 
     // --- Welt erstellen ---
     this.items = this.add.group();
