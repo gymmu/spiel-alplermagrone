@@ -3,8 +3,9 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "level-04.tmx",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
         "level-00.tmx": {
@@ -20,7 +21,7 @@
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 175.93335857629688,
-                "y": 207.67890950397577
+                "y": 48.70882241575161
             }
         },
         "level-02.tmx": {
@@ -28,7 +29,7 @@
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 224.15751609238924,
-                "y": 259.5986368799697
+                "y": 160.2423324498296
             }
         },
         "level-03.tmx": {
@@ -38,13 +39,37 @@
                 "x": 767.2327672327672,
                 "y": 351.3118460486881
             }
+        },
+        "level-04.tmx": {
+            "scale": 1.3121875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 320.07620862110025,
+                "y": 319.69516551559894
+            }
+        },
+        "tileset..tsx": {
+            "scaleInDock": 1
+        },
+        "tileset.tsx": {
+            "scaleInDock": 1
         }
     },
     "map.lastUsedFormat": "tmx",
     "map.width": 20,
     "openFiles": [
+        "level-03.tmx",
+        "level-00.tmx",
+        "level-01.tmx",
+        "level-02.tmx",
+        "level-04.tmx"
     ],
     "project": "level-04.tmx.tiled-project",
     "recentFiles": [
+        "level-03.tmx",
+        "level-00.tmx",
+        "level-01.tmx",
+        "level-02.tmx",
+        "level-04.tmx"
     ]
 }

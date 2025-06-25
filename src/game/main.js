@@ -27,3 +27,11 @@ const config = {
 }
 
 const game = new Phaser.Game(config) // Erstellt eine neue Instanz des Spiels mit der angegebenen Konfiguration.
+
+
+
+// Kollision zwischen Projektil und NPC hinzufügen
+this.physics.add.overlap(projectile, npc, () => {
+  npc.damage(projectile.attackPower)
+  projectile.destroy()
+})

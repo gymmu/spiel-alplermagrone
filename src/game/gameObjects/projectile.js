@@ -1,4 +1,5 @@
 import Phaser from "phaser"
+import NPC from "./player/npc"
 
 export default class Projectile extends Phaser.Physics.Arcade.Sprite {
   /**
@@ -8,10 +9,12 @@ export default class Projectile extends Phaser.Physics.Arcade.Sprite {
    * @param {number} y
    * @param {Phaser.Math.Vector2} direction - normalized direction vector
    * @param {number} speed
+   * @param {number} attackPower
    */
-  constructor(scene, x, y, direction, speed = 300) {
+  constructor(scene, x, y, direction, speed = 300, attackPower = 1) {
     super(scene, x, y, "pickups", "stone")
     this.scene = scene
+    this.attackPower = attackPower
     scene.add.existing(this)
     scene.physics.add.existing(this)
     this.setOrigin(0.5, 0.5)
@@ -41,5 +44,6 @@ export default class Projectile extends Phaser.Physics.Arcade.Sprite {
     if (this.scene.projectilesGroup) {
       this.scene.projectilesGroup.add(this)
     }
+
   }
 }
