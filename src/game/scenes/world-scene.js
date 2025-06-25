@@ -29,12 +29,40 @@ export default class Base2DScene extends Phaser.Scene {
    * Erstellt eine Instanz einer Phaser.Szene.
    */
   constructor() {
-    super({ key: "world" })
-    this.cameraManager = new CameraManager(this)
+    super("world");
+    this.cameraManager = new CameraManager(this);
+  }
+
+  preload() {
+    this.load.audio('bgMusic', 'assets/audio/bgMusic.mp3');
+  }
+
+  create() {
+    // --- Musik starten ---
+    this.music = this.sound.add('bgMusic', { loop: true, volume: 0.1 });
+    this.input.once('pointerdown', () => {
+      this.music.play();
+    });
+    this.add.text(10, 10, 'Klicke zum Starten der Musik');
+
+    // --- Welt erstellen ---
+    this.items = this.add.group();
+    this.stones = this.add.group(); // Neue Gruppe für Steine
+    this.doors = this.add.group();
+    this.npcs = this.add.group();
+    this.projectilesGroup = this.add.group();
+
+    this.loadMap(this.mapKey);
+    this.createPlayerObject();
+    this.cameraManager.createCamera();
+    this.setupDefaultCollisions();
+
+    this.scene.bringToTop("ui-scene");
+    this.scene.bringToTop("debug-scene");
   }
 
   init(data) {
-    this.mapKey = data.map
+    this.mapKey = data.map;
   }
 
   /**
@@ -51,25 +79,6 @@ export default class Base2DScene extends Phaser.Scene {
    * Karte muss zuerst in der preload-Methode geladen werden, der Name der dort
    * verwendet wurde, muss auch hier verwendet werden.
    */
-  create() {
-    this.items = this.add.group()
-    this.stones = this.add.group() // Neue Gruppe für Steine
-    this.doors = this.add.group()
-    this.npcs = this.add.group()
-    this.projectilesGroup = this.add.group()
-
-    this.loadMap(this.mapKey)
-    this.createPlayerObject()
-    this.cameraManager.createCamera()
-    this.setupDefaultCollisions()
-
-    // In dieser Scene werden Lebenspunkte und andere Dinge angezeigt.
-    this.scene.bringToTop("ui-scene")
-
-    // Wird verwendet um weitere Spielinformationen an den Entwickler zu geben.
-    this.scene.bringToTop("debug-scene")
-  }
-
   /**
    * Diese Methode lädt die Spielkarte für eine Szene.
    *

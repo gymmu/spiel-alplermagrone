@@ -29,7 +29,7 @@ export default class Projectile extends Phaser.Physics.Arcade.Sprite {
 
     // Play stone sound effect when shot
     if (scene.sound) {
-      scene.sound.play("stone")
+      scene.sound.play("stone" , { volume: 0.1 })
     }
 
     // Destroy projectile if it leaves the world bounds
