@@ -109,6 +109,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     EVENTS.emit("update-hp", this.hp)
   }
 
+
   /**
    * Füge ein Item zum Inventar hinzu.
    *
@@ -186,6 +187,12 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   update() {
+
+        // Hier schicken wir ein Ereignis los. Phaser schnappt das auf, und führt
+    // die Funktion aus, die beim Emitter von "update-hp" definiert wurde. So
+    // können wir bequem über verschiedene Objekte kommunizieren.
+    EVENTS.emit("update-hp", this.hp)
+
     const { left, right, up, down, space, drop, interact } = this.controller
     let isIdle = true
 
@@ -320,6 +327,7 @@ const dir = new Phaser.Math.Vector2(pointer.worldX - this.x, pointer.worldY - th
    * @param {integer} value Der Schaden der dem Spieler zugefügt werden soll.
    */
   damage(value) {
+    console.log(this.hp, value)
 
     if (this.isInvulnerable) return
 

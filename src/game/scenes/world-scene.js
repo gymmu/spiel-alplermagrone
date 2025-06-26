@@ -10,6 +10,7 @@ import "../gameObjects/pickups/mushroom"
 import "../gameObjects/pickups/flower"
 import "../gameObjects/pickups/stone"
 import "../gameObjects/pickups/bush"
+import NPC2 from "../gameObjects/player/npc2"
 
 /**
  * Erweiterung einer Phaser.Scene mit praktischen Funktionen um Spielobjekte
@@ -114,6 +115,8 @@ export default class Base2DScene extends Phaser.Scene {
 
     // Erstelle die Gegner
     this.createObjects(this.map, "SpawnPoints", "NPC", NPC, this.npcs)
+
+    this.createObjects(this.map, "SpawnPoints", "NPC2", NPC2, this.npcs)
   }
 
   /**
