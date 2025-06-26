@@ -52,6 +52,12 @@
                  "height":0,
                  "id":140,
                  "name":"NPC",
+                 "properties":[
+                        {
+                         "name":"keyName",
+                         "type":"string",
+                         "value":"level-02"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -104,6 +110,11 @@
                          "name":"goToWorld",
                          "type":"string",
                          "value":"map-level-02"
+                        }, 
+                        {
+                         "name":"needKey",
+                         "type":"string",
+                         "value":"level-02"
                         }],
                  "rotation":0,
                  "type":"",

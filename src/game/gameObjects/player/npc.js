@@ -11,14 +11,26 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
   attackPower = 1
   isInvulnerable = false
 
-  constructor(scene, x, y) {
-    super(scene, x, y, "npc")
+  constructor(scene, x, y, properties = {}) {
+    super(scene, x, y, properties, "npc")
     this.scene.add.existing(this)
     this.scene.physics.add.existing(this, false)
     this.body.collideWorldBounds = false
     this.setOrigin(0.5, 0.5)
     this.setSize(24, 24, false)
     this.setOffset(4, 8)
+
+    this.props = {}
+
+    if (properties != null) {
+      if (properties instanceof Array) {
+        properties.forEach((prop) => {
+          this.props[prop.name] = prop.value
+        })
+      } else {
+        this.props = properties
+      }
+    }  // ✅ props speichern
   }
 
   /**
@@ -100,14 +112,20 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
 
     this.isInvulnerable = true
     this.scene.time.delayedCall(500, () => {
-      this.isInvulnerable = false})
+      this.isInvulnerable = false
+    })
 
     if (value == null) value = 0
-    this.hp = this.hp - value
+    this.hp -= value
+
     if (this.hp <= 0) {
-      this.destroy()
+      console.log(this.props)
+      if (this.props.keyName) {
+        this.scene.player.addKey(this.props.keyName)
       }
+      this.destroy()
     }
+  }
 
 
   onCollide(actor) {
