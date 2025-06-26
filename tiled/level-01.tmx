@@ -26,7 +26,7 @@
   </object>
   <object id="160" name="NPC2" x="121.404" y="115.088">
    <properties>
-    <property name="keyName" value="level-02"/>
+    <property name="keyName" value="level-01"/>
    </properties>
   </object>
  </objectgroup>
