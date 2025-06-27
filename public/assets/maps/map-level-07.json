@@ -96,7 +96,7 @@
         {
          "data":[19, 19, 19, 19, 19, 19, 19, 19, 19, 19,
             19, 19, 16, 16, 16, 16, 16, 16, 19, 19,
-            19, 17, 37, 39, 39, 39, 39, 38, 31, 19,
+            19, 17, 37, 39, 0, 39, 39, 38, 31, 19,
             19, 17, 52, 0, 0, 3, 3, 40, 31, 19,
             19, 17, 52, 0, 0, 0, 3, 40, 31, 19,
             19, 17, 52, 3, 3, 0, 0, 40, 31, 19,
@@ -335,34 +335,6 @@
                  "width":22.6667,
                  "x":191.66665,
                  "y":229
-                }, 
-                {
-                 "gid":33,
-                 "height":32,
-                 "id":10,
-                 "name":"Cave",
-                 "properties":[
-                        {
-                         "name":"collides",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"goToWorld",
-                         "type":"string",
-                         "value":"map-level-08"
-                        }, 
-                        {
-                         "name":"needEnemiesKilled",
-                         "type":"int",
-                         "value":8
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":128,
-                 "y":96
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -385,7 +357,35 @@
          "draworder":"topdown",
          "id":5,
          "name":"Doors",
-         "objects":[],
+         "objects":[
+                {
+                 "gid":33,
+                 "height":32,
+                 "id":11,
+                 "name":"Cave",
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"goToWorld",
+                         "type":"string",
+                         "value":"map-level-06"
+                        }, 
+                        {
+                         "name":"needEnemiesKilled",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":128,
+                 "y":96
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -393,7 +393,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":11,
+ "nextobjectid":12,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
