@@ -90,6 +90,11 @@
         "type": "tilemapTiledJSON",
         "key": "map-level-07",
         "url": "map-level-07.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "map-level-08",
+        "url": "map-level-08.json"
       }
     ]
   },
