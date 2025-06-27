@@ -11,7 +11,7 @@ import "../gameObjects/pickups/flower"
 import "../gameObjects/pickups/stone"
 import "../gameObjects/pickups/bush"
 import NPC2 from "../gameObjects/player/npc2"
-
+import NPC3 from "../gameObjects/player/npc3"
 /**
  * Erweiterung einer Phaser.Scene mit praktischen Funktionen um Spielobjekte
  * automatisch zu erstellen.
@@ -60,6 +60,13 @@ export default class Base2DScene extends Phaser.Scene {
 
     this.scene.bringToTop("ui-scene");
     this.scene.bringToTop("debug-scene");
+
+    if (this.mapKey === "map-level-08") {
+      if (this.cameraManager) {
+        this.cameraManager.cameraMaskRadius = 500
+        this.cameraManager.setCameraMask()
+      }
+    }
   }
 
   init(data) {
@@ -117,6 +124,8 @@ export default class Base2DScene extends Phaser.Scene {
     this.createObjects(this.map, "SpawnPoints", "NPC", NPC, this.npcs)
 
     this.createObjects(this.map, "SpawnPoints", "NPC2", NPC2, this.npcs)
+
+    this.createObjects(this.map, "SpawnPoints", "NPC3", NPC3, this.npcs)
   }
 
   /**
