@@ -11,6 +11,7 @@ export default class NPC2 extends NPC {
 
   constructor(scene, x, y, properties = {}) {
       super(scene, x, y, properties, "npc2")
+      this.speed = 90
     }
     update() {
         const { body } = this

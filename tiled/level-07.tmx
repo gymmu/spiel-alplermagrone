@@ -220,8 +220,8 @@
   <object id="11" name="Cave" gid="33" x="128" y="96" width="32" height="32">
    <properties>
     <property name="collides" type="bool" value="false"/>
-    <property name="goToWorld" value="map-level-06"/>
-    <property name="needEnemiesKilled" type="int" value="3"/>
+    <property name="goToWorld" value="map-level-08"/>
+    <property name="needEnemiesKilled" type="int" value="8"/>
    </properties>
   </object>
  </objectgroup>

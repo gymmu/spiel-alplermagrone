@@ -372,12 +372,12 @@
                         {
                          "name":"goToWorld",
                          "type":"string",
-                         "value":"map-level-06"
+                         "value":"map-level-08"
                         }, 
                         {
                          "name":"needEnemiesKilled",
                          "type":"int",
-                         "value":3
+                         "value":8
                         }],
                  "rotation":0,
                  "type":"",
