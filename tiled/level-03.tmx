@@ -80,7 +80,7 @@
    <properties>
     <property name="collides" type="bool" value="false"/>
     <property name="goToWorld" value="map-level-04"/>
-    <property name="needKey" value="level-06"/>
+    <property name="needEnemiesKilled" type="int" value="3"/>
    </properties>
   </object>
  </objectgroup>

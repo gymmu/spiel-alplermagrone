@@ -174,9 +174,9 @@
                          "value":"map-level-04"
                         }, 
                         {
-                         "name":"needKey",
-                         "type":"string",
-                         "value":"level-06"
+                         "name":"needEnemiesKilled",
+                         "type":"int",
+                         "value":3
                         }],
                  "rotation":0,
                  "type":"",

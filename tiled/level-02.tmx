@@ -51,7 +51,7 @@
    <properties>
     <property name="collides" type="bool" value="false"/>
     <property name="goToWorld" value="map-level-03"/>
-    <property name="needKey" value="level-03"/>
+    <property name="needEnemiesKilled" type="int" value="2"/>
    </properties>
   </object>
  </objectgroup>

@@ -183,6 +183,11 @@
                  "name":"Cave",
                  "properties":[
                         {
+                         "name":"NeedEnemiesKilled",
+                         "type":"int",
+                         "value":4
+                        }, 
+                        {
                          "name":"collides",
                          "type":"bool",
                          "value":false
@@ -191,11 +196,6 @@
                          "name":"goToWorld",
                          "type":"string",
                          "value":"map-level-05"
-                        }, 
-                        {
-                         "name":"needKey",
-                         "type":"string",
-                         "value":"level-10"
                         }],
                  "rotation":0,
                  "type":"",
