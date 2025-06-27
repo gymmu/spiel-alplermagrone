@@ -21,11 +21,6 @@
   <object id="139" name="SpawnPlayer" x="167.333" y="175.833" width="14" height="14.3333"/>
   <object id="140" name="NPC" x="247.5" y="106">
    <properties>
-    <property name="keyName" value="level-02"/>
-   </properties>
-  </object>
-  <object id="160" name="NPC2" x="121.404" y="115.088">
-   <properties>
     <property name="keyName" value="level-01"/>
    </properties>
   </object>
@@ -47,7 +42,7 @@
    <properties>
     <property name="collides" type="bool" value="false"/>
     <property name="goToWorld" value="map-level-02"/>
-    <property name="needKey" value="level-02"/>
+    <property name="needKey" value="level-01"/>
    </properties>
   </object>
  </objectgroup>
