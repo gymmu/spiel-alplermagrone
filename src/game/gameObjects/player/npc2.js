@@ -4,8 +4,13 @@ import Player from "./player.js"
 import NPC from "./npc.js"
 
 export default class NPC2 extends NPC {
-    constructor(scene, x, y, properties = {}) {
-        super(scene, x, y, properties, "npc2")
+  hp = 5
+  maxHp = 5
+  #speed = 90
+  attackPower = 2
+
+  constructor(scene, x, y, properties = {}) {
+      super(scene, x, y, properties, "npc2")
     }
     update() {
         const { body } = this
@@ -22,7 +27,7 @@ export default class NPC2 extends NPC {
 
         if (this.move === "left") {
           body.setVelocityX(-this.speed)
-          if (isIdle) this.anims.play("np2_left", true)
+          if (isIdle) this.anims.play("npc2_left", true)
           isIdle = false
         }
         if (this.move === "right") {
