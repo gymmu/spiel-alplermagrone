@@ -218,7 +218,7 @@
    <properties>
     <property name="collides" type="bool" value="false"/>
     <property name="goToWorld" value="map-level-08"/>
-    <property name="needEnemiesKilled" type="int" value="10"/>
+    <property name="needEnemiesKilled" type="int" value="8"/>
    </properties>
   </object>
  </objectgroup>
