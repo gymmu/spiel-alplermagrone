@@ -27,7 +27,7 @@ export function savePlayerState(scene, player) {
 export function loadPlayerState(scene, map) {
   // Spielerstatus aus Registry laden oder Standardwerte setzen
   const savedPlayerState = scene.registry.get("playerState") || {
-    hp: 10,
+    hp: 5,
     inventory: new Array(6).fill(null),
     keys: {},
   }
@@ -82,15 +82,16 @@ export function createPlayer(scene, map) {
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   keys = {}
-  hp = 10
-  maxHp = 100
+  hp = 6
+  maxHp = 6
   speed = 100
   baseSpeed = 100
   gotHit = false
   isAttacking = false
-  attackSpeed = 1500
+  attackSpeed = 700
   inventory = new Array(6).fill(null) // Inventar mit 6 Slots initialisieren
   lastDirection = { x: 0, y: 1 } // Default: down
+  enemiesKilled = 0
 
   constructor(scene, x, y) {
     super(scene, x, y, "player")
@@ -108,6 +109,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     // können wir bequem über verschiedene Objekte kommunizieren.
     EVENTS.emit("update-hp", this.hp)
   }
+
 
   /**
    * Füge ein Item zum Inventar hinzu.
@@ -186,6 +188,12 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   update() {
+
+        // Hier schicken wir ein Ereignis los. Phaser schnappt das auf, und führt
+    // die Funktion aus, die beim Emitter von "update-hp" definiert wurde. So
+    // können wir bequem über verschiedene Objekte kommunizieren.
+    EVENTS.emit("update-hp", this.hp)
+
     const { left, right, up, down, space, drop, interact } = this.controller
     let isIdle = true
 
@@ -269,10 +277,8 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       })
 
       // Wir berechnen die Richtung in die der Spieler blickt
-      const dir = new Phaser.Math.Vector2(
-        this.lastDirection.x,
-        this.lastDirection.y,
-      )
+      const pointer = this.scene.input.activePointer
+const dir = new Phaser.Math.Vector2(pointer.worldX - this.x, pointer.worldY - this.y).normalize()
 
       // Wenn die Richtung nicht 0 ist, dann erstellen wir ein Projectile
       if (dir.lengthSq() > 0) {
@@ -322,6 +328,15 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
    * @param {integer} value Der Schaden der dem Spieler zugefügt werden soll.
    */
   damage(value) {
+    console.log(this.hp, value)
+
+    if (this.isInvulnerable) return
+
+    this.isInvulnerable = true
+    this.scene.time.delayedCall(300, () => {
+      this.isInvulnerable = false
+    })
+
     if (value == null) value = 0
     this.hp = this.hp - value
     if (this.hp <= 0) {

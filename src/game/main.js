@@ -6,6 +6,7 @@ import UIScene from "./scenes/ui-scene.js" // Importiert die Benutzeroberfläche
 import DebugScene from "./scenes/debug-scene.js" // Importiert die Debug-Szene des Spiels.
 import Base2DScene from "./scenes/world-scene.js"
 
+
 const config = {
   // Konfigurationsobjekt für das Spiel.
   type: Phaser.AUTO, // Legt den Renderer-Typ fest, der automatisch zwischen WebGL und Canvas wechselt.
@@ -24,6 +25,22 @@ const config = {
       gravity: { y: 0 }, // Setzt die Schwerkraft auf 0, damit sich Objekte nicht von selbst bewegen.
     },
   },
+  audio: {
+    noAudio: false   // <-- Hier kontrollieren!
+  }
 }
 
 const game = new Phaser.Game(config) // Erstellt eine neue Instanz des Spiels mit der angegebenen Konfiguration.
+
+class MainScene extends Phaser.Scene {
+  constructor() {
+    super('main');
+  }
+create() {
+  // Beispiel: Kollision zwischen Projektilen und NPCs
+  this.physics.add.overlap(this.projectilesGroup, this.npcs, (projectile, npc) => {
+    npc.damage(projectile.attackPower);
+    projectile.destroy();
+  });
+}
+}

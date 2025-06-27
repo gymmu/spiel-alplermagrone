@@ -10,7 +10,8 @@ import "../gameObjects/pickups/mushroom"
 import "../gameObjects/pickups/flower"
 import "../gameObjects/pickups/stone"
 import "../gameObjects/pickups/bush"
-
+import NPC2 from "../gameObjects/player/npc2"
+import NPC3 from "../gameObjects/player/npc3"
 /**
  * Erweiterung einer Phaser.Scene mit praktischen Funktionen um Spielobjekte
  * automatisch zu erstellen.
@@ -29,12 +30,47 @@ export default class Base2DScene extends Phaser.Scene {
    * Erstellt eine Instanz einer Phaser.Szene.
    */
   constructor() {
-    super({ key: "world" })
-    this.cameraManager = new CameraManager(this)
+    super("world");
+    this.cameraManager = new CameraManager(this);
+  }
+
+  preload() {
+    this.load.audio('bgMusic', 'assets/audio/bgMusic.mp3');
+  }
+
+  create() {
+    if (!this.sound.get('bgMusic')) {
+      this.music = this.sound.add('bgMusic', { loop: true, volume: 0.1 });
+      this.music.play();
+    } else {
+      this.music = this.sound.get('bgMusic');
+    }
+
+    // --- Welt erstellen ---
+    this.items = this.add.group();
+    this.stones = this.add.group(); // Neue Gruppe für Steine
+    this.doors = this.add.group();
+    this.npcs = this.add.group();
+    this.projectilesGroup = this.add.group();
+
+    this.loadMap(this.mapKey);
+    this.createPlayerObject();
+    this.cameraManager.createCamera();
+    this.setupDefaultCollisions();
+
+    this.scene.bringToTop("ui-scene");
+    this.scene.bringToTop("debug-scene");
+
+    if (this.mapKey === "map-level-08") {
+      if (this.cameraManager) {
+        this.cameraManager.cameraMaskRadius = 500
+        this.cameraManager.setCameraMask()
+      }
+    }
   }
 
   init(data) {
-    this.mapKey = data.map
+    this.mapKey = data.map;
   }
 
   /**
@@ -51,25 +87,6 @@ export default class Base2DScene extends Phaser.Scene {
    * Karte muss zuerst in der preload-Methode geladen werden, der Name der dort
    * verwendet wurde, muss auch hier verwendet werden.
    */
-  create() {
-    this.items = this.add.group()
-    this.stones = this.add.group() // Neue Gruppe für Steine
-    this.doors = this.add.group()
-    this.npcs = this.add.group()
-    this.projectilesGroup = this.add.group()
-
-    this.loadMap(this.mapKey)
-    this.createPlayerObject()
-    this.cameraManager.createCamera()
-    this.setupDefaultCollisions()
-
-    // In dieser Scene werden Lebenspunkte und andere Dinge angezeigt.
-    this.scene.bringToTop("ui-scene")
-
-    // Wird verwendet um weitere Spielinformationen an den Entwickler zu geben.
-    this.scene.bringToTop("debug-scene")
-  }
-
   /**
    * Diese Methode lädt die Spielkarte für eine Szene.
    *
@@ -82,7 +99,12 @@ export default class Base2DScene extends Phaser.Scene {
   loadMap(mapKey) {
     // Erstellt die Karte so wie sie in `mapKey` definiert ist.
     this.map = this.make.tilemap({ key: mapKey })
-
+    this.physics.world.setBounds(
+      0,
+      0,
+      this.map.widthInPixels,
+      this.map.heightInPixels,
+    )
     // Verwendet die Kacheln von "tileset" so wie es in **Tiled** verwendet wird.
     this.tiles = this.map.addTilesetImage("tileset")
 
@@ -100,6 +122,10 @@ export default class Base2DScene extends Phaser.Scene {
 
     // Erstelle die Gegner
     this.createObjects(this.map, "SpawnPoints", "NPC", NPC, this.npcs)
+
+    this.createObjects(this.map, "SpawnPoints", "NPC2", NPC2, this.npcs)
+
+    this.createObjects(this.map, "SpawnPoints", "NPC3", NPC3, this.npcs)
   }
 
   /**
