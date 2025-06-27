@@ -119,6 +119,7 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
     this.hp -= value
 
     if (this.hp <= 0) {
+      this.scene.player.enemiesKilled += 1
       console.log(this.props)
       if (this.props.keyName) {
         this.scene.player.addKey(this.props.keyName)

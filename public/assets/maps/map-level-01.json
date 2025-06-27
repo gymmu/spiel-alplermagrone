@@ -56,7 +56,7 @@
                         {
                          "name":"keyName",
                          "type":"string",
-                         "value":"level-02"
+                         "value":"level-01"
                         }],
                  "rotation":0,
                  "type":"",
@@ -64,23 +64,6 @@
                  "width":0,
                  "x":247.5,
                  "y":106
-                }, 
-                {
-                 "height":0,
-                 "id":160,
-                 "name":"NPC2",
-                 "properties":[
-                        {
-                         "name":"keyName",
-                         "type":"string",
-                         "value":"level-01"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":121.404,
-                 "y":115.088
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -129,9 +112,9 @@
                          "value":"map-level-02"
                         }, 
                         {
-                         "name":"needKey",
-                         "type":"string",
-                         "value":"level-02"
+                         "name":"needEnemiesKilled",
+                         "type":"int",
+                         "value":1
                         }],
                  "rotation":0,
                  "type":"",
