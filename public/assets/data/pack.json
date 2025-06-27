@@ -80,6 +80,16 @@
         "type": "tilemapTiledJSON",
         "key": "map-level-05",
         "url": "map-level-05.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "map-level-06",
+        "url": "map-level-06.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "map-level-07",
+        "url": "map-level-07.json"
       }
     ]
   },
